@@ -1,0 +1,67 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --color-primary: #FF6A00;
+  --color-primary-600: #E75A00;
+  --color-muted: #F3F4F6;
+  --color-footer: #0B1220;
+}
+
+html,body,#root{
+  min-height:100%;
+}
+
+body{
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #0F1724;
+  background-color: var(--color-muted);
+}
+
+/* ensure layout stretches full viewport */
+html, body {
+  height: 100%;
+}
+
+/* main page area spacing and center content handled by components */
+.page-main { padding-top: 0; padding-bottom: 64px; min-height: calc(100vh - 160px); }
+
+/* page layout container used to center content while allowing full-bleed sections */
+.site-container{ max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+/* full-width section band utility */
+.full-bleed { width: 100%; }
+
+/* main page area spacing */
+.page-main { padding-top: 0; padding-bottom: 48px; }
+
+.heading-display{ font-family: Poppins, Inter, sans-serif; }
+
+/* small utilities for Figma parity */
+.card-base {
+  background: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 20px rgba(15,23,42,0.06);
+  border: 1px solid #EDF2F7;
+  padding: 1rem;
+  overflow: hidden;
+}
+.bg-primary { background: linear-gradient(90deg,#FF6A00 0%, #FF8A00 100%); }
+.pill { @apply inline-flex items-center gap-2 text-xs font-semibold px-2 py-0.5 rounded-full; }
+.muted-text { color: #6B7280; }
+
+/* course grid helpers */
+.course-grid { display: grid; grid-template-columns: repeat(1, minmax(0,1fr)); gap: 24px; }
+@media (min-width: 640px){ .course-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (min-width: 1024px){ .course-grid { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+
+/* utility for overlapping search box */
+.overlap-search { margin-top: -56px; }
+
+/* footer background */
+.bg-footer { background: #0B1220; }
+.footer-inner { max-width: 1100px; margin: 0 auto; padding: 3rem 24px; }
