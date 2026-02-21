@@ -33,32 +33,16 @@ function normalizeRemoteCourse(r: RemoteCourse): Course {
 }
 
 export async function getCourses(): Promise<Course[]> {
-  // Try the public bonus API first, fall back to local mock API if unavailable
-  try {
-    const res = await fetch(`${REMOTE_API_BASE}/api/courses`, { cache: 'no-store' })
-    if (!res.ok) throw new Error('Remote API returned error')
-    const data = await res.json()
-    if (Array.isArray(data)) return data.map(normalizeRemoteCourse)
-    throw new Error('Unexpected data from remote API')
-  } catch (err) {
-    const res = await fetch('/api/courses', { cache: 'no-store' })
-    if (!res.ok) throw new Error('Failed to fetch courses')
-    const data = await res.json()
-    if (Array.isArray(data)) return data.map((d: any) => ({ ...d, image: d.image || d.thumbnail }))
-    return []
-  }
+  const res = await fetch(`${REMOTE_API_BASE}/api/courses`, { cache: 'no-store' })
+  if (!res.ok) throw new Error('Failed to fetch courses from remote API')
+  const data = await res.json()
+  if (!Array.isArray(data)) throw new Error('Unexpected response from remote API')
+  return data.map(normalizeRemoteCourse)
 }
 
 export async function getCourseById(id: string): Promise<Course> {
-  try {
-    const res = await fetch(`${REMOTE_API_BASE}/api/courses/${id}`, { cache: 'no-store' })
-    if (!res.ok) throw new Error('Remote API returned error')
-    const data = await res.json()
-    return normalizeRemoteCourse(data)
-  } catch (err) {
-    const res = await fetch(`/api/courses/${id}`, { cache: 'no-store' })
-    if (!res.ok) throw new Error('Failed to fetch course')
-    const data = await res.json()
-    return { ...data, image: data.image || data.thumbnail }
-  }
+  const res = await fetch(`${REMOTE_API_BASE}/api/courses/${id}`, { cache: 'no-store' })
+  if (!res.ok) throw new Error('Failed to fetch course from remote API')
+  const data = await res.json()
+  return normalizeRemoteCourse(data)
 }
