@@ -12,19 +12,4 @@ Run dev server:
 
 ```bash
 npm run dev
-```
 
-Notes:
-- This repo contains component scaffolding matching the Figma design.
-- Tailwind config is at `tailwind.config.ts` and globals at `app/globals.css`.
-auto-commit 1 - 2026-02-21T08:44:26.6414674+03:00
-auto-commit 2 - 2026-02-21T08:44:27.0041524+03:00
-auto-commit 3 - 2026-02-21T08:44:27.3570728+03:00
-auto-commit 4 - 2026-02-21T08:44:27.5407013+03:00
-auto-commit 5 - 2026-02-21T08:44:27.7286564+03:00
-auto-commit 6 - 2026-02-21T08:44:27.9382520+03:00
-auto-commit 7 - 2026-02-21T08:44:28.1678331+03:00
-auto-commit 8 - 2026-02-21T08:44:28.3568544+03:00
-auto-commit 9 - 2026-02-21T08:44:28.6023048+03:00
-auto-commit 10 - 2026-02-21T08:44:28.8000580+03:00
-finalize: add project files - 2026-02-21T08:47:10.0063915+03:00
