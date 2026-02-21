@@ -1,17 +1,14 @@
 import React from 'react'
 import CourseDetail from '../../../components/CourseDetail'
 import { notFound } from 'next/navigation'
+import { getCourseById } from '../../../lib/api'
 
 type Props = { params: { id: string } }
 
-async function getCourse(id: string) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || ''}/api/courses/${id}`, { cache: 'no-store' })
-  if (!res.ok) return null
-  return res.json()
-}
-
 export default async function CoursePage({ params }: Props) {
-  const course = await getCourse(params.id)
+  // Use the shared API helper which queries the external bonus API and falls back
+  // to the local API. This avoids 404s when the local mock uses different ids.
+  const course = await getCourseById(params.id)
   if (!course) return notFound()
 
   return (
