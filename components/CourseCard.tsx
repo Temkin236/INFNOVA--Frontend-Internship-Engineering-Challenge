@@ -12,7 +12,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course, onClick, compact
   return (
     <article onClick={() => onClick?.(course)} className="card-base cursor-pointer hover:shadow-lg transition">
       <div className="relative">
-        <img src={course.image} alt={course.title} className="w-full h-36 object-cover rounded-t-lg-2xl" />
+        <img src={course.image} alt={course.title} className="w-full h-40 sm:h-36 md:h-36 object-cover rounded-t-lg-2xl" />
         {course.category && (
           <span className="absolute top-3 left-3 bg-white/95 text-xs text-primary px-2 py-0.5 rounded-md shadow-sm uppercase font-medium">
             {course.category}

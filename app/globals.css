@@ -32,6 +32,9 @@ html, body {
 
 /* page layout container used to center content while allowing full-bleed sections */
 .site-container{ max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+@media (max-width: 640px){
+  .site-container{ padding: 0 16px; }
+}
 
 /* full-width section band utility */
 .full-bleed { width: 100%; }
@@ -61,6 +64,15 @@ html, body {
 
 /* utility for overlapping search box */
 .overlap-search { margin-top: -56px; }
+@media (max-width: 640px){
+  /* smaller negative offset on phones so the search box doesn't overlap too much */
+  .overlap-search { margin-top: -28px; }
+}
+
+/* card padding adjustment on small screens */
+@media (max-width: 640px){
+  .card-base { padding: 0.75rem; }
+}
 
 /* footer background */
 .bg-footer { background: #0B1220; }
