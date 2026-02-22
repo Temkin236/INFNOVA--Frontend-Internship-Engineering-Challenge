@@ -35,10 +35,9 @@ export const CoursesContainer: React.FC = () => {
 
   if (error) return <ErrorAlert message={error.message} onRetry={() => { setError(null); setIsLoading(true); getCourses().then(setCourses).catch(setError).finally(() => setIsLoading(false)) }} />
 
-  if (isLoading || !courses) return <SkeletonGrid count={8} columns={3} />
-
   const displayed = useMemo(() => {
     const q = (query || '').trim().toLowerCase()
+    if (!courses) return []
     if (!q) return courses
     return courses.filter((c) => {
       if (!c) return false
@@ -49,6 +48,8 @@ export const CoursesContainer: React.FC = () => {
       return !!(inTitle || inInstructor || inCategory || inTags)
     })
   }, [courses, query])
+
+  if (isLoading || !courses) return <SkeletonGrid count={8} columns={3} />
 
   return <CourseList courses={displayed} columns={3} />
 }
