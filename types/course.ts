@@ -3,6 +3,7 @@ export interface Instructor {
   name: string
   avatar?: string
   title?: string
+  bio?: string
 }
 
 export interface Course {
@@ -18,6 +19,7 @@ export interface Course {
   image?: string
   rating?: number
   students?: number
+  enrolled?: number
   price?: number | 'Free'
   badges?: string[]
   instructor?: Instructor

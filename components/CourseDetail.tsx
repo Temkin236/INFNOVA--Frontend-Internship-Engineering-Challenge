@@ -1,6 +1,6 @@
 import React from 'react'
 import { Course } from '../types/course'
-import Button from './Button'
+import { Button } from './Button'
 
 type Props = {
   course: Course
