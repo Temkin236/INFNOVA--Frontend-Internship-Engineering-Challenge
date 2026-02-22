@@ -8,11 +8,10 @@ export interface CourseListProps {
   courses?: Course[] | null
   isLoading?: boolean
   error?: Error | null
-  onCourseClick?: (c: Course) => void
   columns?: number
 }
 
-export const CourseList: React.FC<CourseListProps> = ({ courses = [], isLoading = false, error = null, onCourseClick, columns = 3 }) => {
+export const CourseList: React.FC<CourseListProps> = ({ courses = [], isLoading = false, error = null, columns = 3 }) => {
   const colsClass = columns === 4 ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-4' : columns === 3 ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3' : 'grid-cols-1 sm:grid-cols-2'
   if (error) {
     return <ErrorAlert message={error.message || 'Failed to load courses'} />
@@ -29,7 +28,7 @@ export const CourseList: React.FC<CourseListProps> = ({ courses = [], isLoading 
   return (
     <div className={`grid ${colsClass} gap-6`}>
       {courses?.map((course) => (
-        <CourseCard key={course.id} course={course} onClick={onCourseClick} />
+        <CourseCard key={course.id} course={course} />
       ))}
     </div>
   )
