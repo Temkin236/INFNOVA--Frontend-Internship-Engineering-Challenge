@@ -20,7 +20,7 @@ export const Header: React.FC = () => {
         {/* Left: logo */}
         <div className="flex items-center gap-3">
           <a href="/" className="flex items-center gap-3">
-            <img src="/Logo.svg" alt="INFNOVA logo" className="w-10 h-10 rounded-md" />
+            <img src="/Logo.svg" alt="INFNOVA logo" width={120} height={32} className="rounded-md" />
           </a>
         </div>
 
