@@ -4,7 +4,7 @@ A pixel-perfect frontend implementation based on the provided Figma design for t
 
 🌐 Live Demo
 
-👉 https://infnova-frontend-internship-engineering-challenge-ne10jd87s.vercel.app/
+👉 [https://infnova-frontend-internship-engineering-challenge-ne10jd87s.vercel.app/](https://infnova-frontend-internship-enginee.vercel.app/)
 
 🛠 Tech Stack
 
@@ -39,5 +39,6 @@ Open http://localhost:3000
 🧠 Approach
 
 Focused on clean UI structure, maintainable components, and production-ready patterns.
-Emphasis was placed on responsiveness, accessibility, and code clarity.   <img width="1919" height="1095" alt="image" src="https://github.com/user-attachments/assets/5620df71-3cc6-41bd-afdc-10395d62772f" />      and the course part is <img width="1919" height="1087" alt="image" src="https://github.com/user-attachments/assets/72663d07-54b8-45fd-92e2-636678ddffea" />
+Emphasis was placed on responsiveness, accessibility, and code clarity.   <img width="1919" height="1095" alt="image" src="https://github.com/user-attachments/assets/5620df71-3cc6-41bd-afdc-10395d62772f" />      and the course part is <img width="1904" height="1034" alt="image" src="https://github.com/user-attachments/assets/f9323a71-d1a3-4f75-9a80-fde89d61e2b6" />
+
 
